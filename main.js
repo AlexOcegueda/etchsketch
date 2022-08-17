@@ -1,3 +1,5 @@
+let color = "black";
+
 function populateBoard(size) {
     let board = document.querySelector(".board");
     let squares = board.querySelectorAll('div');
@@ -16,14 +18,21 @@ function populateBoard(size) {
 
 function changeSize(input){
     if(input >= 2 || input <= 200) {
-        populateBoard(input)
+        populateBoard(input);
     } else {
-        console.log("too many squares or too little")
+        console.log("too many squares or too little");
     }
     
 }
 
 function colorSquare() {
-    this.style.backgroundColor = "black"
-    
+    if(color === "random"){
+        this.style.backgroundColor = `hsl(${Math.random()*300}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
+
+function changeColor(choice) {
+    color = choice;
 }

@@ -20,6 +20,7 @@ function populateBoard(size) {
 
 function changeSize(input){
     if(input >= 2 || input <= 200) {
+        document.querySelector(".error").style.display = "flex";
         populateBoard(input);
     } else {
         console.log("too many squares or too little");
